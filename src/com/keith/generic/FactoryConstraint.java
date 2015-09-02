@@ -1,8 +1,11 @@
+/*
 package com.keith.generic;
 
+*/
 /**
  * Created by keith on 8/31/2015.
- */
+ *//*
+
 public class FactoryConstraint {
     public static void main (String args[]) {
         new Foo2<Integer>(new IntegerFactory());
@@ -37,4 +40,4 @@ class Widget {
             return new Widget();
         }
     }
-}
+}*/

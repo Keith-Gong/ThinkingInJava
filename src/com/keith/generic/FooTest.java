@@ -5,7 +5,7 @@ package com.keith.generic;
  */
 public class FooTest<T> {
     public static void main (String args[]) {
-        Foo<Cat> foo = new Foo<>();
+        Foo3<Cat> foo = new Foo3<>();
 
             if (foo.var instanceof Object) {
                 System.out.println("11");
@@ -13,7 +13,7 @@ public class FooTest<T> {
     }
 }
 
-class Foo<T> {
+class Foo3<T> {
     T var;
 }
 class Cat {

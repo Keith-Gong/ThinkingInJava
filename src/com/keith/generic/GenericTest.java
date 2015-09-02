@@ -9,7 +9,7 @@ public class GenericTest {
         //point.setX();
 
         Point1 p1 = new Point1();
-        Foo f = new Foo();
+        Foo3 f = new Foo3();
         p1.setX(f);
         p1.getX();
     }
