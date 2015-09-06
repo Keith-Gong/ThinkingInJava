@@ -34,8 +34,6 @@ public class CounterGenerator {
             return chars[index];
         }
     }
-
-
 }
 
 interface Generator<T> {
