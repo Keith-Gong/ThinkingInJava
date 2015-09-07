@@ -1,6 +1,7 @@
 package com.keith.container;
 
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Created by Keith on 9/6/15.
@@ -34,7 +35,48 @@ public class Tester<C> {
         this(container, tests);
         this.paramList = paramList;
     }
-    //public void setHeadLine
+    public void setHeadLine(String newHeadLine) {
+        headLine = newHeadLine;
+    }
+    public static <C> void run(C cntnr, List<Test<C>> tests) {
+        new Tester<C>(cntnr, tests).timedTest();
+    }
+    private void displayHeader () {
+        int width = fieldWidth * tests.size() + sizeWidth;
+        int dashLength = width - headLine.length() - 1;
+        StringBuilder head = new StringBuilder(width);
+        for (int i = 0; i < dashLength / 2; i++) {
+            head.append('-');
+        }
+        head.append(' ');
+        head.append(headLine);
+        head.append(' ');
+        for (int i = 0; i < dashLength / 2; i++) {
+            head.append('-');
+        }
+        System.out.println(head);
+        System.out.format(sizeField, "size");
+        for(Test test : tests) {
+            System.out.format(stringField(), test.name);
+        }
+        System.out.println();
+    }
+    public void timedTest() {
+        displayHeader();
+        for (TestParam param : paramList) {
+            System.out.format(sizeField, param.SIZE);
+            for (Test<C> test : tests) {
+                C kontainer = initialize(param.SIZE);
+                long start = System.nanoTime();
+
+                int reps = test.test(kontainer, param);
+                long duration = System.nanoTime() - start;
+                long timePerRep = duration;
+                System.out.format(numberField(), timePerRep);
+            }
+            System.out.println();
+        }
+    }
 }
 abstract class Test<C> {
     String name;
