@@ -1,0 +1,32 @@
+1: package com.keith.iooperation;
+2: 
+3: import java.io.BufferedReader;
+4: import java.io.PrintWriter;
+5: import java.io.StringReader;
+6: 
+7: /**
+8:  * Created by Keith on 9/12/15.
+9:  */
+10: public class FileOutputShortcut {
+11:     static String file = "/Users/Keith/GitHub/ThinkingInJava/src/com/keith/iooperation/FileOutputShortcut.out";
+12:     public static void main (String args[]) {
+13:         try {
+14:             BufferedReader in = new BufferedReader(
+15:                     new StringReader(
+16:                             BufferedInputFile.read("/Users/Keith/GitHub/ThinkingInJava/src/com/keith/iooperation/FileOutputShortcut.java")
+17:                     )
+18:             );
+19:             PrintWriter out = new PrintWriter(file);
+20:             int lineCount = 1;
+21:             String s;
+22:             while ((s = in.readLine()) != null) {
+23:                 out.println(lineCount ++ + ": " + s);
+24:             }
+25:             out.close();
+26:             System.out.println(BufferedInputFile.read(file));
+27:         } catch (Exception e) {
+28:             e.printStackTrace();
+29:         }
+30:     }
+31: 
+32: }

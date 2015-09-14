@@ -1,0 +1,31 @@
+11: package com.keith.iooperation;
+12: 
+13: import java.io.*;
+14: 
+15: /**
+16:  * Created by Keith on 9/10/15.
+17:  */
+18: public class BasicFileOutput {
+19:     static String file = "/Users/Keith/GitHub/ThinkingInJava/src/com/keith/iooperation/BasicFileOutput.out";
+20:     public static void main (String args[]) {
+21:         try {
+22:             BufferedReader in  = new BufferedReader(
+23:                     new StringReader(
+24:                             BufferedInputFile.read("/Users/Keith/GitHub/ThinkingInJava/src/com/keith/iooperation/BasicFileOutput.java")
+25:                     )
+26:             );
+27:             PrintWriter out = new PrintWriter(
+28:                     new BufferedWriter(new FileWriter(file))
+29:             );
+30:             int lineCount = 11;
+31:             String s;
+32:             while ((s = in.readLine()) != null) {
+33:                 out.println(lineCount++ + ": " + s);
+34:             }
+35:             out.close();
+36:             System.out.println(BufferedInputFile.read(file));
+37:         } catch (Exception e) {
+38:             e.printStackTrace();
+39:         }
+40:     }
+41: }
