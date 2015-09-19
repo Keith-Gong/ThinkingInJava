@@ -1,4 +1,4 @@
-package com.keith.type.information;
+package com.keith.typeinformation;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

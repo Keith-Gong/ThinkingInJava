@@ -1,4 +1,4 @@
-package com.keith.type.information;
+package com.keith.typeinformation;
 
 import java.util.ArrayList;
 import java.util.List;

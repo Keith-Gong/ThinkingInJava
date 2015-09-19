@@ -1,4 +1,4 @@
-package com.keith.type.information;
+package com.keith.typeinformation;
 
 /**
  * Created by Keith on 8/25/15.
