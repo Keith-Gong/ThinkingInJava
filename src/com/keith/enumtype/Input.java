@@ -24,10 +24,6 @@ public enum Input {
         this.value = value;
     }
 
-    Input (Context context) {
-        this.context = context;
-    }
-    Context context;
     Input () {}
     int amount () {
         return value;
@@ -38,6 +34,3 @@ public enum Input {
     }
 }
 
-class Context {
-
-}

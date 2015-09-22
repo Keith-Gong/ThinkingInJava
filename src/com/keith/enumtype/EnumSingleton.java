@@ -20,4 +20,8 @@ public enum EnumSingleton {
 
 }
 
+class Context {
+
+}
+
 
